@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery Lista de Tarefas</title>
     <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style media="screen">
         *{
             margin: 0; padding: 0;
@@ -53,6 +54,7 @@
     </style>
 
     <script src="jquery.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -67,7 +69,8 @@
 
             $('#input').change(function() {
                 var input = $(this).val();
-                $('ul').append('<li>' + input + '</li>')
+                $('ul').append('<li>' + input + ' <i class="fas fa-check"></i>  <i class="fas fa-trash"></i> </li>');
+                $(this).val('');
             })
         }); 
 

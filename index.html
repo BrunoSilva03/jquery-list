@@ -78,6 +78,12 @@
             color: #ff0033;
         }
 
+        ul .checked {
+            background: lightgreen;
+            text-decoration: line-through;
+            transition: .2s;
+        }
+
     </style>
 
     <script src="jquery.js" charset="utf-8"></script>
@@ -98,7 +104,17 @@
                 var input = $(this).val();
                 $('ul').append('<li>' + input + ' <i class="fas fa-check"></i>  <i class="fas fa-trash"></i> </li>');
                 $(this).val('');
-            })
+            });
+
+
+            $('ul').on('click', '.fa-trash', function() {
+                $(this).parent('li').fadeOut(200);
+            });
+
+
+            $('ul').on('click','.fa-check', function() {
+                $(this).parent('li').toggleClass('checked');
+            });
         }); 
 
     </script>
